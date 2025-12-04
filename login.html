@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Transparent Login Form</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+    <div class="bg-img">
+        <div class="content">
+            <header>Login Form</header>
+            <form method="POST" action="login.php"> <!-- Form that submits to login.php -->
+                <div class="field">
+                    <input type="text" name="email" required placeholder="Email or Phone">
+                </div>
+                <div class="field">
+                    <input type="password" name="password" class="pass-key" required placeholder="Password">
+                    <span class="show">SHOW</span>
+                </div>
+                <div class="pass">
+                    <a href="#">Forgot Password?</a>
+                </div>
+                <div class="field">
+                    <input type="submit" value="LOGIN">
+                </div>
+            </form>
+            <div class="login">Or login with</div>
+            <div class="socials">
+                <div class="social-btn facebook">
+                    <i class="fab fa-facebook-f"></i>
+                    <span>Facebook</span>
+                </div>
+                <div class="social-btn instagram">
+                    <i class="fab fa-instagram"></i>
+                    <span>Instagram</span>
+                </div>
+            </div>
+            <div class="signup">Don't have an account?
+                <a href="register.html">Signup Now</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const pass_field = document.querySelector('.pass-key');
+        const showBtn = document.querySelector('.show');
+        
+        showBtn.addEventListener('click', () => {
+            if (pass_field.type === "password") {
+                pass_field.type = "text";
+                showBtn.textContent = "HIDE";
+            } else {
+                pass_field.type = "password";
+                showBtn.textContent = "SHOW";
+            }
+        });
+    </script>
+</body>
+</html>
